@@ -1,0 +1,197 @@
+Fhtml {
+    width: 60%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+#gpxinput{
+  text-indent: 20px;
+}
+#createGPX{
+  font-size: 30px;
+}
+#viewPanFileListContainer{
+  text-align: center;
+  border: 1px solid black;
+}
+#viewPanFileListContainer2{
+  text-align: center;
+  border: 1px solid black;
+}
+#viewQueryList{
+  text-align: center;
+}
+#sortList,#queryFileList,#selectRoute,#aord{
+  text-align: center;
+}
+#sortList2,#viewQueryList2,#queryFileList2,#selectRoute2,#aord2{
+  text-align: center;
+  width: 250px;
+}
+#butDiv{
+  text-align: center;
+}
+#center{
+  text-align: center;
+}
+#addRoute{
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+}
+#fileForm {
+  margin:5px;
+}
+input[type="submit"],input[type="file"],button {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  transition:opacity 0.2s ease-in-out;
+  background-color:#dddddd;
+  transition:opacity 0.2s ease-in-out;
+}
+input[type="submit"]:hover,input[type="file"]:hover,button:hover {
+  opacity:.8;
+}
+.inputBoxes{
+  width: 795px;
+  border-radius: 4px;
+}
+#addRoute:hover {
+  opacity:.8;
+}
+#selectList{
+  text-align: center;
+}
+#panel{
+  text-align: center;
+  padding: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+#Routepanel, #betweenPanel{
+  text-align: center;
+  padding: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+#createGPX{
+  margin-left: 15px;
+}
+#panelFlip{
+  text-align: left;
+  padding-left: 5px;
+  display: none;
+  border: 1px solid black;
+
+}
+#panelFlipRoute, #panelFlipBetween{
+
+  text-align: left;
+  padding-left: 5px;
+  display: none;
+  border: 1px solid black;
+}
+#tableStyle{
+  height: 200px;
+  overflow: auto;
+}
+#tableStyle2{
+  height: 200px;
+  overflow: auto;
+}
+#FileLog{
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+}
+#gpxView{
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+}
+#PathView{
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+}
+.sqltables{
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+}
+#log{
+  display:none;
+}
+#gpx{
+  display:none;
+}
+#path{
+  display:none;
+}
+#table1Flip,#table2Flip,#table3Flip,#table4Flip{
+  display:none;
+}
+table{
+  width: 100%;
+  border: 1px  solid black;
+  text-align: center;
+}
+th{
+
+  border: 1px solid black;
+  text-align: center;
+}
+td{
+  border: 1px solid black;
+  text-align: center;
+  overflow-x: auto;
+}
+body {
+    height: 100%;
+    min-height: 100%;
+    line-height: 1.75;
+    background-color: #FFFFFF;
+}
+a:link:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
+}
+input[type=submit], button {
+    cursor: pointer;
+    cursor: hand;
+}
+@media(max-width: 900px) {
+    html {
+        font-size: 14px !important;
+        width: 80% !important;
+    }
+}
+@media(max-width: 480px) {
+    html {
+        font-size: 12px !important;
+        width: 90% !important;
+    }
+}
+@media(max-width: 320px) {
+    html {
+        font-size: 12px !important;
+        width: 100% !important;
+    }
+}

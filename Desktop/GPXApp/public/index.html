@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kinda dope</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- Custom CSS End -->
+</head>
+<body>
+    <h3>GPX Parser</h3><br><br>
+    <!-- Leave me at the bottom of body -->
+    <script src="/index.js"></script>
+    <div class="container">
+        <div id="FileLog">File Log Panel</div>
+        <div id="log">
+          <div id=tableStyle>
+          <table id='fileLogPan'>
+            <tr id="mainRow">
+              <th>FileName (click to download)</th>
+              <th>Version</th>
+              <th>Creator</th>
+              <th>Number of Waypoints</th>
+              <th>Number of Routes</th>
+              <th>Number of Tracks</th>
+            </tr>
+          </table>
+          <form id="fileForm" enctype="multipart/form-data" action="upload/" method="post">
+            <input type="file" id="file" name="uploadFile" required>
+            <input type="submit" id='uploadBut' value="Upload">
+          </form>
+        </div>
+        </div>
+        <div id="gpxView">GPX View Panel
+        </div>
+        <div id="gpx">
+          <div id="tableStyle">
+          <table id="gpxTable">
+            <div id="viewPanFileListContainer">
+              <select id="viewPanFileList">
+                <option></option>
+              </select>
+            </div>
+            <tr>
+              <th>Component</th>
+              <th>Name</th>
+              <th>Number of Points</th>
+              <th>Length</th>
+              <th>Loop</th>
+            </tr>
+          </table>
+        </div>
+        </div>
+        <form id="renameForm">
+          <br>
+          <p>Enter new name and click rename</p>
+          <input type="text"  placeholder="New Name" id="theName" required>
+        </form>
+      </div>
+      <br>
+      </div>
+      <br>
+      <br>
+      <header>
+      <h1>Additional Functionality</h1>
+    </header>
+    <div id="createGPX">
+      <p>Create GPX</p>
+      </div>
+        <form id="createGPXForm">
+          <input type="text" id="fileName" placeholder="Filename" class="inputBoxes" required>
+          <br>
+          <input type="text" id="creator" placeholder="Creator" class="inputBoxes" required>
+          <br>
+          <input type="number" step="0.1" id="version" placeholder="Version Number e.g 1.1" class="inputBoxes" required>
+          <br>
+          <input type="submit" value="Create GPX" id="gpxSubmit">
+        </form>
+        <br><br><br>
+      <div id=Routepanel>Add Route</div>
+      <div id=panelFlipRoute>
+        <div id="selectList">
+        <select id="fileList">
+        </select>
+      </div>
+        <br>
+          <form>Latitude:<br><input id="lat"type="number" class="inputBoxes" step="0.05"> <br>
+            Longitude:<br><input id="lon" type="number" class="inputBoxes" step="0.05">
+          </form>
+          <button id="wpButton">Add Waypoint</button>
+        <br>
+        <br>
+        <div id="butDiv">
+          <button id="addRoute">Add Route</button>
+        </div>
+        <br>
+      </div>
+      <div id=betweenPanel>Find Path Between</div>
+      <div id=panelFlipBetween>
+        <div id="selectList">
+      </div>
+        <br>
+          <form>
+            <input class="inputBoxes" id="latS"type="number" placeholder="Latidtude Start Point" step="0.05"> <br>
+            <input class="inputBoxes" id="lonS" type="number" placeholder="Longitude Start Point" step="0.05">
+            <br><input class="inputBoxes" id="latE"type="number" placeholder="Latitude End Point" step="0.05">
+            <br><input class="inputBoxes" id="lonE" type="number" placeholder="Longitude End Point" step="0.05">
+            <br><input class="inputBoxes" id="delta" type="number" placeholder="Point Comparison Accuracy" step="0.01">
+          </form>
+        <br>
+        <br>
+        <div id="butDiv">
+          <button id="findPath">Find Path</button>
+        </div>
+        <br>
+      </div>
+      <div id="PathView">Paths
+      </div>
+      <div id="path">
+        <div id="tableStyle2">
+        <table id="gpxTable2">
+          <div id="viewPanFileListContainer2">
+          </div>
+          <tr id='gpxTable2Body'>
+            <th>Component</th>
+            <th>Name</th>
+            <th>Number of Points</th>
+            <th>Length</th>
+            <th>Loop</th>
+          </tr>
+        </table>
+      </div>
+      </div>
+      <br>
+      <br>
+      <form id="connectForm">
+        <input type="text" id="dbuser" placeholder="Username" class="inputBoxes" required>
+        <br>
+        <input type="password" id="dbpass" placeholder="Password" class="inputBoxes" required>
+        <br>
+        <input type="text" id="dbname" placeholder="DataBase Name" class="inputBoxes" required>
+        <br>
+        <input type="submit" value="Login" id="connectBut">
+      </form>
+      <div id="sqlTable1" class="sqltables">FILE
+      </div>
+      <div id="table1Flip">
+        <div id="tableStyle2">
+        <table id="sqlFileTable">
+          <!-- <div id="viewPanFileListContainer2">
+          </div> -->
+          <tr id='sqlFileTableBody'>
+            <th>Gpx ID</th>
+            <th>Filename</th>
+            <th>Version</th>
+            <th>Creator</th>
+          </tr>
+        </table>
+      </div>
+      </div>
+      <div id="sqlTable2" class="sqltables">ROUTE</div>
+      <div id="table2Flip">
+        <div id="tableStyle2">
+        <table id="sqlRouteTable">
+          <!-- <div id="viewPanFileListContainer2">
+          </div> -->
+          <tr id='sqlRouteTableBody'>
+            <th>route_id</th>
+            <th>route_name</th>
+            <th>route_len</th>
+            <th>gpx_id</th>
+          </tr>
+        </table>
+      </div>
+      </div>
+      <div id="sqlTable3" class="sqltables">POINT
+      </div>
+      <div id="table3Flip">
+        <div id="tableStyle2">
+        <table id="sqlPointTable">
+        </table>
+      </div>
+      </div>
+      <br>
+      <div id='center'>
+      <button id="storeFiles">Store All Files</button>
+      <button id="clearData">Clear All Data</button>
+      <button id="displayDB">Display DB Status</button>
+    </div>
+      <br>
+      <br>
+      <center>Select Query</center>
+      <div id="viewQueryList">
+        <select id="viewQueryList2">
+          <option></option>
+          <option>Query 1</option>
+          <option>Query 2</option>
+          <option>Query 3</option>
+          <option>Query 4</option>
+        </select>
+      </div>
+      <center>Select Route ID:</center>
+      <div id="selectRoute">
+        <select id="selectRoute2">
+        </select>
+      </div>
+      <center>Sort By:</center>
+      <div id="sortList">
+        <select id="sortList2">
+          <option></option>
+        </select>
+      </div>
+      <center>Ascending/Descending</center>
+      <div id="aord">
+        <select id="aord2">
+          <option>Ascending</option>
+          <option>Descending</option>
+        </select>
+      </div>
+      <center>From file</center>
+      <div id="queryFileList">
+        <select id="queryFileList2">
+        </select>
+      </div>
+      <div id='center'>
+      <button id="executeQuery">Execute Query</button>
+    </div>
+      <br>
+      <div id="queryTable" class="sqltables">Query Results
+      </div>
+
+      <div id="table4Flip">
+        <div id="tableStyle2">
+        <table id="executeQueryTable">
+          <!-- <div id="viewPanFileListContainer2">
+          </div> -->
+          <tr id='queryTableBody'>
+          </tr>
+        </table>
+      </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </body>
+  </html>
